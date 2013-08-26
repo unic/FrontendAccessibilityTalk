@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title> – How to make your frontend accessible – Frontend Conference Zurich</title>
+    <link href="assets/css/main.css" media="all" rel="stylesheet" type="text/css" />
+    <style>
+    	.button {
+    		background: linear-gradient(to bottom, #eee, #fff);
+    		border: 1px solid #ccc;
+    		border-radius: 0.5em;
+    		cursor: pointer;
+    		padding: 0.5em;
+    	}
+    	.button:hover,
+    	.button:focus,
+    	.button:active {
+    		background: linear-gradient(to top, #eee, #fff);
+    	}
+    </style>
+  </head>
+  <body>
+    <header role="banner">
+      <h1><span>Demo 3.2:</span> Accessible focus handling</h1>
+    </header>
+    <main role="main">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in enim at massa viverra pellentesque. Donec egestas nulla non nibh sagittis adipiscing. Aenean magna massa, porta ut venenatis id, posuere quis dolor. Nullam et diam non tellus fringilla volutpat. Donec nec libero enim, id aliquet felis. Sed sollicitudin laoreet massa, ut dignissim magna elementum et. Nulla malesuada libero vitae tortor rutrum eget commodo ipsum luctus. Quisque lacus metus, vehicula vel volutpat vitae, commodo in dui. Vivamus et
+        <a href="#">velit</a>
+        urna.
+        Aenean eu justo vitae odio fermentum adipiscing. Pellentesque nulla est, vestibulum sit amet consequat non, elementum ac lectus. Aliquam erat volutpat. Sed dolor erat, lobortis at tempus vel, ornare in leo. Suspendisse in arcu felis.
+      </p>
+      <p>
+        <button class="button">Do stuff</button>
+        <span class="button" role="button" tabindex="0">Do stuff, too</span>
+      </p>
+    </main>
+    <hr>
+    <nav role="navigation">
+      <a class="prev" href="3-1_focus-inacessible.html">« Back to "<span>Demo 3.1:</span> Inaccessible focus handling"</a>
+      <a class="index" href="index.html">Index</a>
+    </nav>
+    <hr>
+    <a class="js-toggle" href="#fixes">Show fixes</a>
+    <div class="fixes is-invisible js-details" id="fixes">
+      <h2>Fixes</h2>
+      <ul>
+        <li>Native focus outline preserved.</li>
+        <li>Fake buttons supplied with role="button" attribute and keydown listener for enter and space keys.</li>
+      </ul>
+    </div>
+    <script src="assets/js/main.js" type="text/javascript"></script>
+    <script>
+      // WARNING: This code is for demo purposes only and does not work in IE < 9
+      ;(function() {
+      	'use strict';
+      
+      	[].forEach.call(document.querySelectorAll('.button'), function(button) {
+      		var callback = function(event) {
+      				alert('WHOAH');
+      			};
+      
+      		button.addEventListener('click', function(event) {
+      			callback(event);
+      		}, false);
+      		
+      		// OPTIMIZATION: Add listener for space and enter key
+      		button.addEventListener('keydown', function(event) {
+      			if ([13, 32].indexOf(event.keyCode) !== -1) {
+      				callback(event);
+      			}
+      		}, false);
+      	});
+      })();
+    </script>
+  </body>
+</html>

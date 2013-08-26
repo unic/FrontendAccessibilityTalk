@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title> – How to make your frontend accessible – Frontend Conference Zurich</title>
+    <link href="assets/css/main.css" media="all" rel="stylesheet" type="text/css" />
+    <style>
+    	/* Reset styling from main.css and remove outline */
+    	a:focus {
+    		color: inherit;
+    		outline: none !important;
+    		text-decoration: underline;
+    	}
+    
+    	/* Button */
+    	.button {
+    		background: linear-gradient(to bottom, #eee, #fff);
+    		border: 1px solid #ccc;
+    		border-radius: 0.5em;
+    		cursor: pointer;
+    		padding: 0.5em;
+    	}
+    	.button:hover {
+    		background: linear-gradient(to top, #eee, #fff);
+    	}
+    </style>
+  </head>
+  <body>
+    <header role="banner">
+      <h1><span>Demo 3.1:</span> Inaccessible focus handling</h1>
+    </header>
+    <main role="main">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in enim at massa viverra pellentesque. Donec egestas nulla non nibh sagittis adipiscing. Aenean magna massa, porta ut venenatis id, posuere quis dolor. Nullam et diam non tellus fringilla volutpat. Donec nec libero enim, id aliquet felis. Sed sollicitudin laoreet massa, ut dignissim magna elementum et. Nulla malesuada libero vitae tortor rutrum eget commodo ipsum luctus. Quisque lacus metus, vehicula vel volutpat vitae, commodo in dui. Vivamus et
+        <a href="#">velit</a>
+        urna.
+        Aenean eu justo vitae odio fermentum adipiscing. Pellentesque nulla est, vestibulum sit amet consequat non, elementum ac lectus. Aliquam erat volutpat. Sed dolor erat, lobortis at tempus vel, ornare in leo. Suspendisse in arcu felis.
+      </p>
+      <p>
+        <span class="button">Do stuff</span>
+        <span class="button" tabindex="0">Do stuff, too</span>
+      </p>
+    </main>
+    <hr>
+    <nav role="navigation">
+      <a class="next" href="3-2_focus-accessible.html">Forward to "<span>Demo 3.2:</span> Accessible focus handling" »</a>
+      <a class="prev" href="2-4_form-html5.html">« Back to "<span>Demo 2.4:</span> HTML5 form validation"</a>
+      <a class="index" href="index.html">Index</a>
+    </nav>
+    <hr>
+    <a class="js-toggle" href="#issues">Show issues</a>
+    <div class="issues is-invisible js-details" id="issues">
+      <h2>Issues</h2>
+      <ul>
+        <li>"outline:none" used to remove focus indication.</li>
+        <li>Fake buttons used, not triggered by keyboard and partly unfocusable.</li>
+      </ul>
+    </div>
+    <script src="assets/js/main.js" type="text/javascript"></script>
+    <script>
+      // WARNING: This code is for demo purposes only and does not work in IE < 9
+      ;(function() {
+      	'use strict';
+      
+      	[].forEach.call(document.querySelectorAll('.button'), function(button) {
+      		button.addEventListener('click', function(event) {
+      			alert('WHOAH');
+      		}, false);
+      	});
+      })();
+    </script>
+  </body>
+</html>

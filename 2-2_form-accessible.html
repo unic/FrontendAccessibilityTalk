@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title> – How to make your frontend accessible – Frontend Conference Zurich</title>
+    <link href="assets/css/main.css" media="all" rel="stylesheet" type="text/css" />
+    
+  </head>
+  <body>
+    <header role="banner">
+      <h1><span>Demo 2.2:</span> Accessible form</h1>
+    </header>
+    <main role="main">
+      <form action="">
+        <p>
+          <label for="name">
+            <strong>Name</strong>
+            (required)
+          </label>
+          <input class="js_required" id="name" name="name" type="text">
+        </p>
+        <p>
+          <label for="email">
+            <strong>E-mail</strong>
+            (required)
+          </label>
+          <input class="js_required" id="email" name="email" type="text">
+        </p>
+        <p>
+          <label for="tel">Telephone</label>
+          <input id="tel" name="tel" type="text">
+        </p>
+        <p>
+          <input type="submit" value="Submit">
+        </p>
+      </form>
+    </main>
+    <hr>
+    <nav role="navigation">
+      <a class="next" href="2-3_form-accessible-aria.html">Forward to "<span>Demo 2.3:</span> Accessible form validation using ARIA" »</a>
+      <a class="prev" href="2-1_form-inaccessible.html">« Back to "<span>Demo 2.1:</span> Inaccessible form"</a>
+      <a class="index" href="index.html">Index</a>
+    </nav>
+    <hr>
+    <a class="js-toggle" href="#fixes">Show fixes</a>
+    <div class="fixes is-invisible js-details" id="fixes">
+      <h2>Fixes</h2>
+      <ul>
+        <li>label tags used.</li>
+        <li>Required fields indicated with text.</li>
+        <li>Error messages inserted into label tags.</li>
+        <li>First invalid field focused.</li>
+      </ul>
+    </div>
+    <script src="assets/js/main.js" type="text/javascript"></script>
+    <script>
+      // WARNING: This code is for demo purposes only and does not work in IE < 9
+      ;(function() {
+      	'use strict';
+      
+      	var form = document.querySelector('form'),
+      		fields = [],
+      		fieldFocused = false,
+      
+      		testField = function(field) {
+      			if (field.input.value === '') {
+      				// OPTIMIZATION: Add message to label
+      				if (!field.isInvalid) {
+      					field.label.appendChild(field.error);
+      
+      					field.isInvalid = true;
+      				}
+      
+      				// OPTIMIZATION: Focus first invalid field
+      				if (!fieldFocused) {
+      					field.input.focus();
+      
+      					fieldFocused = true;
+      				}
+      
+      				return false;
+      			} else if (field.isInvalid) {
+      				// Remove message
+      				field.label.removeChild(field.error);
+      				
+      				field.isInvalid = false;
+      			}
+      
+      			return true;
+      		};
+      
+      	// Save fields and prepare error messages
+      	[].forEach.call(form.querySelectorAll('.js_required'), function(input) {
+      		var error = document.createElement('span'),
+      			errorMessage = document.createTextNode('Error: Field must not be empty'),
+      			label = input.parentNode.querySelector('label');
+      
+      		error.appendChild(errorMessage);
+      		error.classList.add('error');
+      
+      		fields.push({
+      			input: input,
+      			error: error,
+      			label: label,
+      			isInvalid: false
+      		});
+      	});
+      
+      	// Loop through fields on submit and toggle error message
+      	form.addEventListener('submit', function(event) {
+      		var validationFailed = false;
+      
+      		fields.forEach(function(field) {
+      			if (!testField(field)) {
+      				validationFailed = true;
+      			}
+      		});
+      
+      		if (validationFailed) {
+      			event.preventDefault();
+      		}
+      	}, false);
+      })();
+    </script>
+  </body>
+</html>
