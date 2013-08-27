@@ -2,6 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
     <title> – How to make your frontend accessible – Frontend Conference Zurich</title>
     <link href="assets/css/main.css" media="all" rel="stylesheet" type="text/css" />
     
@@ -72,20 +74,20 @@
         </ul>
       </section>
       <section>
-        <h3>3. Element focus</h3>
+        <h3>3. Element focus and keyboard navigation</h3>
         <ul>
           <li>
-            <a href="3-1_focus-inacessible.html"><span>Demo 3.1:</span> Inaccessible focus handling</a>
+            <a href="3-1_focus-inacessible.html"><span>Demo 3.1:</span> Inaccessible focus handling and keyboard navigation</a>
             <ul>
               <li>"outline:none" used to remove focus indication.</li>
               <li>Fake buttons used, not triggered by keyboard and partly unfocusable.</li>
             </ul>
           </li>
           <li>
-            <a href="3-2_focus-accessible.html"><span>Demo 3.2:</span> Accessible focus handling</a>
+            <a href="3-2_focus-accessible.html"><span>Demo 3.2:</span> Accessible focus handling and keyboard navigation</a>
             <ul>
               <li>Native focus outline preserved.</li>
-              <li>Fake buttons supplied with role="button" attribute and keydown listener for enter and space keys.</li>
+              <li>Fake buttons supplied with role="button" attribute and keydown listener for enter and space keys the (preferred solution is <strong>always</strong> a real button or link!).</li>
             </ul>
           </li>
         </ul>
