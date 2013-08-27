@@ -38,22 +38,28 @@
       </form>
     </main>
     <hr>
-    <nav role="navigation">
-      <a class="next" href="2-3_form-accessible-aria.html">Forward to "<span>Demo 2.3:</span> Accessible form validation using ARIA" »</a>
-      <a class="prev" href="2-1_form-inaccessible.html">« Back to "<span>Demo 2.1:</span> Inaccessible form"</a>
-      <a class="index" href="index.html">Index</a>
-    </nav>
-    <hr>
-    <a class="js-toggle" href="#fixes">Show fixes</a>
+    <a class="js-toggle" href="#fixes">Show fixes and notes</a>
     <div class="fixes is-invisible js-details" id="fixes">
       <h2>Fixes</h2>
       <ul>
-        <li>label tags used.</li>
-        <li>Required fields indicated with text.</li>
-        <li>Error messages inserted into label tags.</li>
-        <li>First invalid field focused.</li>
+        <li><code>label</code> tags used (<a href="http://www.w3.org/TR/WCAG-TECHS/H44.html">H44</a>).</li>
+        <li>Required fields indicated with text (<a href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-TECHS/H90.html">H90</a>).</li>
+        <li>Error messages inserted into <code>label</code> tags (<a href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/G83">G83</a>).</li>
+        <li>First invalid field focused (<a href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/SCR18">SCR18</a>).</li>
       </ul>
+      <div class="notes">
+        <h2>Notes</h2>
+        <ul>
+          <li>Corresponding success criteria: <a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-minimize-error-identified">3.3.1 Error Identification</a>, <a href="http://www.w3.org/WAI/WCAG20/quickref/#qr-minimize-error-cues">3.3.2 Labels or Instructions</a>.</li>
+        </ul>
+      </div>
     </div>
+    <hr>
+    <nav role="navigation">
+      <a class="next" href="2-3_form-aria.html">Forward to "<span>Demo 2.3:</span> Form validation using ARIA" »</a>
+      <a class="prev" href="2-1_form-inaccessible.html">« Back to "<span>Demo 2.1:</span> Inaccessible form"</a>
+      <a class="index" href="index.html">Index</a>
+    </nav>
     <script src="assets/js/main.js" type="text/javascript"></script>
     <script>
       // WARNING: This code is for demo purposes only and does not work in IE < 9

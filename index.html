@@ -30,8 +30,8 @@
           <li>
             <a href="1-2_table-accessible.html"><span>Demo 1.2:</span> Accessible table</a>
             <ul>
-              <li>th with scope attribute used.</li>
-              <li>caption used.</li>
+              <li><code>th</code> with <code>scope</code> attribute used (<a href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H63">H63</a>).</li>
+              <li><code>caption</code> used (<a href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/H39">H39</a>).</li>
             </ul>
           </li>
         </ul>
@@ -42,7 +42,7 @@
           <li>
             <a href="2-1_form-inaccessible.html"><span>Demo 2.1:</span> Inaccessible form</a>
             <ul>
-              <li>label tags omitted or hidden.</li>
+              <li><code>label</code> tags omitted or hidden.</li>
               <li>Required fields not properly marked.</li>
               <li>Unnoticed insertion of error message.</li>
               <li>No connection of error messages to invalid fields.</li>
@@ -51,24 +51,24 @@
           <li>
             <a href="2-2_form-accessible.html"><span>Demo 2.2:</span> Accessible form</a>
             <ul>
-              <li>label tags used.</li>
-              <li>Required fields indicated with text.</li>
-              <li>Error messages inserted into label tags.</li>
-              <li>First invalid field focused.</li>
+              <li><code>label</code> tags used (<a href="http://www.w3.org/TR/WCAG-TECHS/H44.html">H44</a>).</li>
+              <li>Required fields indicated with text (<a href="http://www.w3.org/WAI/GL/WCAG20/WD-WCAG20-TECHS/H90.html">H90</a>).</li>
+              <li>Error messages inserted into <code>label</code> tags (<a href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/G83">G83</a>).</li>
+              <li>First invalid field focused (<a href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/SCR18">SCR18</a>).</li>
             </ul>
           </li>
           <li>
-            <a href="2-3_form-accessible-aria.html"><span>Demo 2.3:</span> Accessible form validation using ARIA</a>
+            <a href="2-3_form-aria.html"><span>Demo 2.3:</span> Form validation using ARIA</a>
             <ul>
-              <li>aria-required used to mark required field.</li>
-              <li>aria-invalid used to dynamically mark invalid field.</li>
-              <li>aria-labelledby used to connect error messages to field.</li>
+              <li><code>aria-required</code> used to mark required field (<a href="http://www.w3.org/TR/WCAG-TECHS/ARIA2.html">ARIA2</a>).</li>
+              <li><code>aria-invalid</code> used to dynamically mark invalid field.</li>
+              <li><code>aria-describedby</code> used to connect error messages to field.</li>
             </ul>
           </li>
           <li>
             <a href="2-4_form-html5.html"><span>Demo 2.4:</span> HTML5 form validation</a>
             <ul>
-              <li>required attribute used to mark required fields.</li>
+              <li><code>required</code> attribute used to mark required fields.</li>
             </ul>
           </li>
         </ul>
@@ -86,8 +86,8 @@
           <li>
             <a href="3-2_focus-accessible.html"><span>Demo 3.2:</span> Accessible focus handling and keyboard navigation</a>
             <ul>
-              <li>Native focus outline preserved.</li>
-              <li>Fake buttons supplied with role="button" attribute and keydown listener for enter and space keys the (preferred solution is <strong>always</strong> a real button or link!).</li>
+              <li>Native focus outline preserved (<a href="http://www.w3.org/TR/2012/NOTE-WCAG20-TECHS-20120103/G165">G165</a>).</li>
+              <li>Fake buttons supplied with role="button" attribute and keydown listener for enter and space keys (<a href="http://www.w3.org/WAI/GL/wiki/Making_actions_keyboard_accessible_by_using_keyboard_event_handlers_with_WAI-ARIA_controls#Example_1:_Using_Space_to_activate_a_button">new technique</a>).</li>
             </ul>
           </li>
         </ul>
