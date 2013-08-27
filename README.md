@@ -1,4 +1,6 @@
-FrontendAccessibilityTalk
-=========================
+«How to make your frontend accessible» 
+======================================
 
-Talk «How to make your frontend accessible» at Frontend Conference Zurich
+Demos from our talk at the Frontend Conference Zurich 2013.
+
+http://unic.github.io/FrontendAccessibilityTalk/
