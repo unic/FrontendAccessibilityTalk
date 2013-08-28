@@ -14,6 +14,8 @@ Topics covered:
 
 Each solution is provided with references and links to alternative approaches.
 
+Screen reader used: VoiceOver on OS X 10.8.4 and iOS 6.
+
 ---------
 
 Feel free to file an issue in case you have a question or improvement suggestion.
