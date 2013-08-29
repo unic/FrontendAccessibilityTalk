@@ -7,14 +7,15 @@ http://unic.github.io/FrontendAccessibilityTalk/
 
 Note (28th August): 
 - The talk will be live-streamed on http://2013.frontendconf.ch/live/ from 3 a.m. to 4 a.m. (CEST).
-- Slides and transcript will be made available after the talk. 
+- Slides and transcript will be made available on https://speakerdeck.com/backflip after the talk. 
 
 --------
 
 Topics covered:
 - Tables
 - Form markup and validation
-- Element focus and keyboard navigation
+- Element focus
+- Fake buttons
 
 Each solution is provided with references and links to alternative approaches.
 
