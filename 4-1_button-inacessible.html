@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <title> – How to make your frontend accessible – Frontend Conference Zurich</title>
+    <link href="assets/css/main.css" media="all" rel="stylesheet" type="text/css" />
+    
+  </head>
+  <body>
+    <header role="banner">
+      <h1><span>Demo 4.1:</span> Inaccessible fake buttons</h1>
+    </header>
+    <main role="main">
+      <p>
+        Unfocusable fake button:
+        <span class="button">Do stuff</span>
+      </p>
+      <p>
+        Focusable fake button, no keyboard interaction:
+        <span class="button" tabindex="0">Do stuff, stoo</span>
+      </p>
+    </main>
+    <hr>
+    <a class="js-toggle" href="#issues">Show issues</a>
+    <div class="issues is-invisible js-details" id="issues">
+      <h2>Issues</h2>
+      <ul>
+        <li>Fake buttons used, not triggerable using the keyboard and partly unfocusable.</li>
+      </ul>
+    </div>
+    <hr>
+    <nav role="navigation">
+      <a class="next" href="4-2_button-accessible.html">Forward to "<span>Demo 4.2:</span> Partly accessible fake buttons" »</a>
+      <a class="prev" href="3-2_focus-accessible.html">« Back to "<span>Demo 3.2:</span> Accessible focus handling"</a>
+      <a class="index" href="index.html">Index</a>
+    </nav>
+    <script src="assets/js/main.js" type="text/javascript"></script>
+    <script>
+      // WARNING: This code is for demo purposes only and does not work in IE < 9
+      ;(function() {
+      	'use strict';
+      
+      	[].forEach.call(document.querySelectorAll('.button'), function(button) {
+      		button.addEventListener('click', function(event) {
+      			alert('WHOAH');
+      		}, false);
+      	});
+      })();
+    </script>
+  </body>
+</html>
