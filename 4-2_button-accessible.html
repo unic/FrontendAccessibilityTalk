@@ -10,18 +10,16 @@
   </head>
   <body>
     <header role="banner">
-      <h1><span>Demo 4.2:</span> Partly accessible fake buttons</h1>
+      <h1><span>Demo 4.2:</span> (Partly) accessible buttons</h1>
     </header>
     <main role="main">
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in enim at massa viverra pellentesque. Donec egestas nulla non nibh sagittis adipiscing. Aenean magna massa, porta ut venenatis id, posuere quis dolor. Nullam et diam non tellus fringilla volutpat. Donec nec libero enim, id aliquet felis. Sed sollicitudin laoreet massa, ut dignissim magna elementum et. Nulla malesuada libero vitae tortor rutrum eget commodo ipsum luctus. Quisque lacus metus, vehicula vel volutpat vitae, commodo in dui. Vivamus et
-        <a href="#">velit</a>
-        urna.
-        Aenean eu justo vitae odio fermentum adipiscing. Pellentesque nulla est, vestibulum sit amet consequat non, elementum ac lectus. Aliquam erat volutpat. Sed dolor erat, lobortis at tempus vel, ornare in leo. Suspendisse in arcu felis.
+        Almost accessible fake button:
+        <span class="button" role="button" tabindex="0">Do stuff</span>
       </p>
       <p>
-        <button class="button">Do stuff</button>
-        <span class="button" role="button" tabindex="0">Do stuff, too</span>
+        Completely accessible native button:
+        <button class="button">Do stuff, too</button>
       </p>
     </main>
     <hr>
@@ -29,7 +27,8 @@
     <div class="fixes is-invisible js-details" id="fixes">
       <h2>Fixes</h2>
       <ul>
-        <li>Fake buttons supplied with <code>role="button"</code> attribute (in addition to <code>tabindex="0"</code>) and <code>keydown</code> listener for enter and space keys (<a href="http://www.w3.org/WAI/GL/wiki/Making_actions_keyboard_accessible_by_using_keyboard_event_handlers_with_WAI-ARIA_controls#Example_1:_Using_Space_to_activate_a_button">new technique</a>).</li>
+        <li>Fake button supplied with <code>role="button"</code> attribute (in addition to <code>tabindex="0"</code>) and <code>keydown</code> listener for enter and space keys (<a href="http://www.w3.org/WAI/GL/wiki/Making_actions_keyboard_accessible_by_using_keyboard_event_handlers_with_WAI-ARIA_controls#Example_1:_Using_Space_to_activate_a_button">new technique</a>).</li>
+        <li>Native <code>button</code> element used.</li>
       </ul>
       <div class="notes">
         <h2>Notes</h2>
@@ -41,7 +40,7 @@
     </div>
     <hr>
     <nav role="navigation">
-      <a class="prev" href="4-1_button-inacessible.html">« Back to "<span>Demo 4.1:</span> Inaccessible fake buttons"</a>
+      <a class="prev" href="4-1_button-inaccessible.html">« Back to "<span>Demo 4.1:</span> Inaccessible fake buttons"</a>
       <a class="index" href="index.html">Index</a>
     </nav>
     <script src="assets/js/main.js" type="text/javascript"></script>
@@ -60,11 +59,13 @@
       		}, false);
       		
       		// OPTIMIZATION: Add listener for enter and space key
-      		button.addEventListener('keydown', function(event) {
-      			if ([13, 32].indexOf(event.keyCode) !== -1) {
-      				callback(event);
-      			}
-      		}, false);
+      		if (button.tagName.toLowerCase() !== 'button') {
+      			button.addEventListener('keydown', function(event) {
+      				if ([13, 32].indexOf(event.keyCode) !== -1) {
+      					callback(event);
+      				}
+      			}, false);
+      		}
       	});
       })();
     </script>
