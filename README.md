@@ -6,7 +6,7 @@ Demos from our talk at the Frontend Conference Zurich, 30th August 2013.
 http://unic.github.io/FrontendAccessibilityTalk/
 
 Note (28th August): 
-- The talk will be live-streamed on http://2013.frontendconf.ch/live/ from 3 a.m. to 4 a.m. (CEST). The
+- The talk will be live-streamed on http://2013.frontendconf.ch/live/ from 3 a.m. to 4 a.m. (CEST).
 - Video and slides will be made available on http://lanyrd.com/2013/fec13/coverage/ after the talk. 
 
 --------
