@@ -69,5 +69,5 @@ Menus:
 Additional resources based on feedback after the talk
 -----------------------------------------------------
 
-- HTML5 accessibility support tables by The Paciello Group (last updated in 2012, but still the best data there is): http://html5accessibility.com/
+- HTML5 accessibility support tables by The Paciello Group: http://html5accessibility.com/
 - «HTML accessible emails» by the RNIB: (with some specific advice regarding layout tables) http://www.rnib.org.uk/professionals/webaccessibility/articles/Pages/html_emails.aspx
